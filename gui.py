@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-
+from uprava_stylu import st_combobox, st_Button
 from decimal import Decimal
 from exit_delete import krypto_seznam, open_url
 import time
@@ -101,20 +101,9 @@ ws.option_add("*TCombobox*Listbox.selectBackground", "blue")
 
 ws.option_add("*TCombobox*Listbox.selectForeground", "white")
 
-style.map('TCombobox', fieldbackground=[('readonly', "blue")])
-style.map('TCombobox', selectbackground=[('readonly', "white")])
-style.map('TCombobox', selectforeground=[('readonly', "blue")])
-style.map('TCombobox', background=[('readonly', "white")])
-style.map('TCombobox', foreground=[('readonly', "white")])
+st_combobox()
 
-style = ttk.Style()
-style.theme_use("clam")
-style.map("Vertical.TScrollbar",
-          foreground=[("!active", "white"),("active", "blue")],
-          background=[("!active","white"),("active","white")])
-style.configure("Vertical.TScrollbar", troughcolor="blue",
-                lightcolor="blue")
-# style.configure('TCombobox',
+# # style.configure('TCombobox',
 #                 background="white",
 #                 foreground="blue",
 #                 fieldbackground="white",
@@ -304,17 +293,9 @@ fr = tk.LabelFrame(ws,
 
 fr.place(bordermode=tk.OUTSIDE, height=398)#grid(column=0,row=0,pady=10,padx=30)
 
-style.configure("C.TButton",borderwidth=2 ,font=("calibri", 10, "bold","underline"))
-style.map("C.TButton",
-          
-          foreground=[("!active", "blue"),("active", "white")],
-          background=[("!active","white"),("active","blue")])
-style.configure("B.TButton", font=("calibri", 10,"bold","underline"))#borderwidth=2
-style.map("B.TButton",
-            foreground=[("!active", "white"),("active", "blue")],
-            background=[("!active","blue"),("active","white")])
 
-# tlacitka a volani na funkce 
+# tlacitka a volani na funkce
+C_Button = st_Button()
 f_b = ttk.Button(fr,text="Fiat/BTC",style="C.TButton",command=fiat_krypto) # nedavat () jinak se funkce zavola automaticky
 b_f = ttk.Button(fr, text="BTC/Fiat",style="B.TButton" ,command=krypto_fiat)
 b_s = ttk.Button(fr, text="Smazat",style="C.TButton", command=smaz)
