@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from uprava_stylu import st_combobox, st_Button
 from decimal import Decimal
-from exit_delete import krypto_seznam, open_url
+from exit_delete import seznam
 import time
 import os
 from utils import dotaz, czk
@@ -154,7 +154,7 @@ listbox.pack()
 #                 lightcolor="green")
 
 # seznam krypto men a paru 
-krypto_list = ttk.Combobox(fa_r,state = "readonly",width=8,style="my.TCombobox", values = krypto_seznam,font=("Arial", 15))
+krypto_list = ttk.Combobox(fa_r,state = "readonly",width=8,style="my.TCombobox", values =seznam,font=("Arial", 15))
 #style.configure("K.TCombobox", selectbackground="blue")
 
 krypto_list.set("Krypto")
