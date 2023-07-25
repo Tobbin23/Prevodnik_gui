@@ -1,7 +1,7 @@
 import sys
 from tkinter import *
 import tkinter as tk
-
+#25.7.2023
 def exit():
 	sys.exit(0)
 
